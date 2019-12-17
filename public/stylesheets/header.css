@@ -1,0 +1,163 @@
+/* **************************** */
+ /* EVERYTHING RELATED TO HEADER */
+ /* **************************** */
+
+.navbar {
+	opacity: 100%;
+}
+
+.logo {
+	width: 180px;
+	height: 100px;
+}
+
+@keyframes example {
+	50%   {color: #ff8b89;}
+	100%  {color: #2A0055}
+  }
+
+.animate{
+	  animation: example 1.75s cubic-bezier(0.445, 0.05, 0.55, 0.95) 1s infinite forwards alternate;
+  }
+
+.search_bar {
+	height: 50px;
+	font-size: 20px;
+	font-family: Segoe UI;
+	background-color: #F6F1F1;
+	color: #5A4E4E;
+	border: 1px solid black;
+	font-weight: 600;
+	letter-spacing: 0.25em;
+}
+
+#search_button {
+	margin: 0;
+	padding: auto;
+	border-left: 0;
+}
+.neeche_button {
+	color: white;
+}
+
+.profile_picture {
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+    margin-top: 0;
+    object-fit: cover;
+}
+.name {
+	align-items: center;
+	color:#f1f1f1;
+}
+
+.search-border {
+    border: none;
+}
+
+/* ********* LEFT COLUMN ********* */
+.badge-tag {
+	color: #fff;
+	background-color: #EF5B22;
+	border: 1px solid #fff;
+	font-weight: 400;
+	transition: color .15s ease-in-out,
+				background-color .15s ease-in-out,
+				border .15s ease-in-out,
+				box-shadow .15s ease-in-out;
+}
+
+.badge-tag:hover {
+	color: #EF5B22;
+	background-color: #fff;
+	text-decoration: none;
+	border: 1px solid #EF5B22;
+	border-color: #EF5B22;
+	
+}
+
+.plus-icon {
+    color: rgb(240, 83, 21);
+    font-size: 130%;
+}
+
+.plus-icon:hover {
+    color: rgb(240, 83, 21);
+}
+
+
+/* DROPDOWN MENU */
+
+.dropdown-item {
+	color: #2a0055;
+}
+
+.dropdown-item:hover {
+	background-color: #2a0055;
+	color: white;
+}
+
+.dropdown-menu {
+	border: 1px solid #2a0055;
+}
+
+
+/* ********* RIGHT COLUMN ********* */
+
+/* TRENDING EVENTS */
+
+#sort-prompt {
+	font-size: 0.8rem;
+	display: block;
+}
+
+.trending-event-heading {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+
+.trending-events > a {
+	text-decoration: none;
+}
+
+/* CHATS */
+.chat-pic {
+	border-radius: 50%;
+	height: 42px;
+	width: 42px;
+	border: 1px dashed #EF5B22;
+}
+
+.friend-name {
+	font-size: 1rem;
+}
+
+.chat-box {
+	background-color: #EAEAEA;
+	border-bottom: 1px solid #CECECE;
+}
+
+.view-all-chats {
+	font-size: 0.8rem;
+}
+
+.chat-box:hover {
+	background-color: rgb(212, 209, 209);
+}
+
+/* DROPDOWN MENU */
+
+.dropdown-item {
+	color: #2a0055;
+}
+
+.dropdown-item:hover {
+	background-color: #2a0055;
+	color: white;
+}
+
+.dropdown-menu {
+	border: 1px solid #2a0055;
+}

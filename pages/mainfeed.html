@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+        <title>Home | WorkHook</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/common.css">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/header.css">
+	<nav class="navbar navbar-light d-flex sticky-top" style="background-color: #EF5B22">
+		<div class="container col-sm-12 d-flex justify-content-between">
+			<div class="row col-sm-12 align-items-center">
+
+				<!--LOGO-->
+				<div class="col-sm-2 float-left ">
+					<a class="navbar-brand" href="/"><img src="logo_w.png" class="logo ml-auto"></a>
+				</div>
+
+				<!--HOME BUTTON-->
+				<div class="col-sm-1 ">
+					<a href="/"><i class="fa fa-home fa-2x fa-fw neeche_button my-auto float-left"></i></a>
+				</div>
+
+
+				<!-- SEARCH BAR -->
+				<div class="col">
+					<form action="/search/events" method="POST" class="form-inline">
+						<input type="text" name="searchBar" placeholder="Search Bar" class="col search_bar ml-auto">
+						<button type="submit" class="search_bar col-sm-1 d-inline" id="search_button">
+							<i class="fa fa-search "></i>
+						</button>
+					</form>
+				</div>
+
+
+				<!--NOTIFICATIONS BUTTON-->
+				<div class="col-sm-1">
+					<a href="# dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="far fa-bell fa-2x fa-fw neeche_button ml-auto float-right animate"></i>
+					</a>
+					<div class="dropdown-menu" id="pic-dropdown" aria-labelledby="dropdownMenuLink">
+						<a class="dropdown-item option pr-2" href="#">Friend Requests <span class="badge badge-pill badge-tag ml-2">2</span></a>
+						<a class="dropdown-item option pr-2" href="#">Chats<span class="badge badge-pill badge-tag ml-2 float-right">1</span></a>
+						<a class="dropdown-item option pr-2" href="#">Event Invites<span class="badge badge-pill badge-tag ml-2 float-right">7</span></a>
+						<a class="dropdown-item option pr-2" href="#">Group Invites<span class="badge badge-pill badge-tag ml-2 float-right">4</span></a>
+					</div>
+				</div>
+
+
+				<!-- PROFILE PICTURE -->
+				<div class="text-center col-sm-2">
+					<div class=" float-right">
+						<a href="#"><img src="bandi.jpg" class="profile_picture"></a>
+						<label class="name d-block">
+                            <strong>
+								<div class="dropdown show">
+									<a class="name dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                        
+                                    </a>                                
+									<div class="dropdown-menu" id="pic-dropdown" aria-labelledby="dropdownMenuLink">
+										<a class="dropdown-item option" href="/users/<%= curUser.username %>/profile">View Profile</a>
+										<a class="dropdown-item option" href="#">Settings</a>
+										<a class="dropdown-item option" href="/logout">Logout</a>
+									</div>
+								</div>
+                            </strong>
+                        </label>
+					</div>
+				</div>
+			</div>
+		</div>
+    </nav>
+    
+    <!-- *************** LEFT COLUMN *************** -->
+	<div class="container d-flex justify-content-start border-right float-left col-sm-2 make-me-sticky">
+		<div id="left-col" class="col-sm-12 ml-2 ">
+
+			<!-------- GROUPS --------->
+			<div id="groups" class="row d-flex mt-4 mb-4 border-bottom pb-4">
+				<!-- GROUPS HEADING -->
+				<div id="group-header" class="row justify-content-center">
+					<h5 class="tbg col-sm-12"><strong>People to Follow</strong></h5>
+				</div>
+
+				<div id="group-list" class="container mx-auto">
+					<nav class="nav col-sm-12 mx-auto list-group">
+
+						<!-- <div class="row">
+							<div class="col-sm-12">
+								<a class="nav-link tbp d-inline-block" href="#"><i
+										class="fas fa-users mr-2"></i>Istanbul Jobs</a>
+							</div>
+                        </div> -->
+                        
+                        <div class="row py-3 d-flex justify-content-start align-items-center">
+                            <div class="col-sm-3">
+                                <a href=""><img src="../public/images/gates.jpg" alt="" class="chat-pic"></a>
+                            </div>
+                            <div class="col-sm-7">
+                                <a href=""><h5 class="friend-name tbp mb-0">Bill Gates</h5></a>
+                            </div>
+                            <div class="col-sm-2 tbp" >
+                                <a href="" class="plus-icon" style="font-size: 130%;"><i class="fas fa-plus-square"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="row py-3 d-flex justify-content-start align-items-center">
+                            <div class="col-sm-3">
+                                <a href=""><img src="../public/images/elon.jpg" alt="" class="chat-pic"></a>
+                            </div>
+                            <div class="col-sm-7">
+                                <a href=""><h5 class="friend-name tbp mb-0">Elon Musk</h5></a>
+                            </div>
+                            <div class="col-sm-2 tbp" >
+                                <a href="" class="plus-icon" style="font-size: 130%;"><i class="fas fa-plus-square"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="row py-3 d-flex justify-content-start align-items-center">
+                            <div class="col-sm-3">
+                                <a href=""><img src="../public/images/mark.jpg" alt="" class="chat-pic"></a>
+                            </div>
+                            <div class="col-sm-7">
+                                <a href=""><h5 class="friend-name tbp mb-0">Mark Zuckerberg</h5></a>
+                            </div>
+                            <div class="col-sm-2 tbp" >
+                                <a href="" class="plus-icon" style="font-size: 130%;"><i class="fas fa-plus-square"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="row py-3 d-flex justify-content-start align-items-center">
+                            <div class="col-sm-3">
+                                <a href=""><img src="../public/images/haluk.jpg" alt="" class="chat-pic"></a>
+                            </div>
+                            <div class="col-sm-7">
+                                <a href=""><h5 class="friend-name tbp mb-0">Haluk Altunel</h5></a>
+                            </div>
+                            <div class="col-sm-2 tbp" >
+                                <a href="" class="plus-icon" style="font-size: 130%;"><i class="fas fa-plus-square"></i></a>
+                            </div>
+                        </div>
+						
+					</nav>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="#" id="see-more" class="link tbp"><strong>See more</strong></a>
+						</div>
+					</div>
+				</div>
+				<!-- LIST OF GROUPS -->
+				<!-- <div class="container px-0">
+					<div class="col-sm-8">
+						<button id="create-group-btn" class="btn btn-sm btn-outline-dark mt-3 col mx-auto my-btn">Create
+							Group</button>
+					</div>
+
+				</div> -->
+
+			</div>
+
+			<!-------- POPULAR TAGS --------->
+			<div id="pop-tags" class="row d-flex">
+				<!-- HEADING -->
+				<div class="row d-block mb-3">
+					<h5 class="tbg col"><strong>Popular Tags</strong></h5>
+				</div>
+
+				<div class="container px-0 d-block">
+					<div class="col">
+						<a href="#" class="badge badge-tag d-inline">coding</a>
+						<a href="#" class="badge badge-tag d-inline">football</a>
+						<a href="#" class="badge badge-tag d-inline">camping</a>
+						<a href="#" class="badge badge-tag d-inline">cooking</a>
+						<a href="#" class="badge badge-tag d-inline">tvshow</a>
+						<a href="#" class="badge badge-tag d-inline">rain</a>
+						<a href="#" class="badge badge-tag d-inline">swimming</a> 
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid col-sm-8 d-inline-block feed">
+
+	</div>
+
+
+	<!-- *************** RIGHT COLUMN *************** -->
+	<div class="container d-flex justify-content-start border-left float-right col-sm-2 make-me-sticky">
+
+		<div id="right-col" class="col-sm-12 px-0">
+
+			<!-------- BULLETIN BOARD --------->
+			<div id="trending-events" class="row d-flex col-sm-12 mt-3 mb-0 pb-0 px-3">
+				<h5 class="tbg"><strong>Bulletin Board</strong></h5>
+				<p id="sort-prompt" class="tbp col-sm-12 px-0 py-0 mb-3">Sorted by: date</p>
+
+				<nav class="nav flex-column">
+
+					<!-- Event 1 -->
+					<div class="mb-4 trending-event-instance">
+						<a href="#">
+							<h4 class="tbg trending-event-heading mb-0">Software Developer</h4>
+							<p class="tbg font-weight-bold mb-0" style="font-size: 0.8rem;">Job posted by: </p>
+							<span class="tbp" style="font-size: 0.8rem;">Ankara Concert Association</span>
+						</a>
+					</div>
+
+					<!-- Event 2 -->
+					<div class="mb-4">
+						<a href="#">
+							<h4 class="tbg trending-event-heading mb-0">Business Analyst</h4>
+							<p class="tbg font-weight-bold mb-0" style="font-size: 0.8rem;">Job posted by: </p>
+							<span class="tbp" style="font-size: 0.8rem;">Bilkent Football Club</span>
+						</a>
+					</div>
+
+					<!-- Event 3 -->
+					<div class="mb-4">
+						<a href="#">
+							<h4 class="tbg trending-event-heading mb-0">Graphic Desinger</h4>
+							<p class="tbg font-weight-bold mb-0" style="font-size: 0.8rem;">Job posted by: </p>
+							<span class="tbp" style="font-size: 0.8rem;">Borda Technology</span>
+						</a>
+                    </div>
+                    
+                    <!-- Event 4 -->
+					<div class="mb-4">
+						<a href="#">
+							<h4 class="tbg trending-event-heading mb-0">Finance Manager</h4>
+							<p class="tbg font-weight-bold mb-0" style="font-size: 0.8rem;">Job posted by: </p>
+							<span class="tbp" style="font-size: 0.8rem;">JP Morgan</span>
+						</a>
+                    </div>
+                    
+                    <!-- Event 5 -->
+					<div class="mb-4">
+						<a href="#">
+							<h4 class="tbg trending-event-heading mb-0">CFD Analyst</h4>
+							<p class="tbg font-weight-bold mb-0" style="font-size: 0.8rem;">Job posted by: </p>
+							<span class="tbp" style="font-size: 0.8rem;">Arçelik</span>
+						</a>
+                    </div>                                        
+
+				</nav>
+			</div>			
+		</div>
+    </div>
+    
+    <!-- *************** FEED *************** -->
+		<div class="container-fluid col-lg-8 d-inline-block feed ">
+			<div class="d-flex justify-content-between border-bottom align-items-center mt-4 mb-4 pb-4 ">
+				<h2 style="color: #4E4E4E; font-weight: 700;">Your Feed</h2>
+					<button class="btn btn-lg btn-outline-dark d-flex float-right my-btn">Post a Job</button>
+			</div>
+
+			<!-- ALL POSTS -->
+
+			<div class="container-fluid d-flex align-items-start post mt-5 pl-3 pb-5 border-bottom ">
+				<img src="../public/images/dancing.jpg" class="img-responsive d-inline-block mr-3 rounded border-dark" alt="Image">
+				<div class="col-sm-8">
+					<div class="d-flex justify-content-between align-items-center">
+						<a href=""><p class="display-4 mb-1 ml-2 d-inline tbg">CFD Analyst</p></a>
+						<button class="btn btn-sm btn-outline-dark float-right py-2 my-btn ">View Job</button>
+					</div>
+					<p class="ml-2 pl-2 mb-2 "><strong class="tbg">Job posted by: </strong><a class="tbp" href="#">Arçelik</a></p>
+
+					<div class="row pl-2 mt-4">
+						<div class="column col-lg-5 border-right ml-0 pl-4">
+							<!-- <p class="mb-0"><strong class="tbg subheading">Details</strong></p> -->
+							<div class="container pl-0">
+								<p><strong class="tbg">Location: </strong><span class="tbp">Bilkent</span></p>
+                                <p class="mb-0"><strong class="tbg ">Application Deadline: </strong><span class="tbp"></span></p c>
+                                <p class="tbp "><em>16th December, 2019</em></p>
+								<!-- <p><strong class="tbg">Time: </strong><span class="tbp"></span></p> -->
+							</div>
+						</div>
+						<div class="column col-lg-7">
+							<div>
+								<p class="tbp">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime cumque sapiente dolore similique ab veritatis beatae ipsam consequatur, quasi quas atque cum aliquam illum vero deserunt earum sunt minima sed.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+	integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+	crossorigin="anonymous"></script>
+
+</html>
+
+
+	

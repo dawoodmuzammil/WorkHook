@@ -1,0 +1,71 @@
+html {
+    height: 100%;
+}
+
+body {
+    /* background-image: url("../images/analysis.jpg"); */
+    /* background: rgb(255,90,0); */
+    /* background: linear-gradient(0deg, rgba(255,90,0,1) 0%, rgba(255,255,255,1) 67%, rgba(255,255,255,1) 100%);       */
+background-image: url("https://images.unsplash.com/uploads/141103282695035fa1380/95cdfeef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1948&q=80");
+    background-size: cover;
+    color: white;    
+    font-family: 'Roboto Slab';
+    
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.logo {
+    max-width: 100%;
+}
+
+.card {
+    background-color: rgba(0,0,0,0.3) !important;
+    border-radius: 25px;
+}
+
+.card-header {
+    color: white;
+    /* color: rgba(0,0,0,0.5); */
+    /* color: transparent; */
+}
+
+.login-box {
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-0%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    position: absolute;
+}
+
+.input-group-prepend span {
+    background-color: #ff5a00;
+    color: white;
+    border: none;
+}
+
+.forgot-pw {
+    color: white;
+}
+
+.forgot-pw:hover {
+    color: #ff5a00;
+}
+
+.login-btn {
+    color: white;
+    background-color: #ff5a00;
+}
+
+.login-btn:hover {
+    color: #ff5a00;
+    background-color: white;
+    border-color: #ff5a00;
+}
+
+
+
+
