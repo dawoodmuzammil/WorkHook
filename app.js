@@ -14,12 +14,15 @@ var jobsRouter  = require('./routes/jobs');
 
 var app = express();
 
+// for BodyParser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 // connect to the database
-console.log("Connecting to database...")
 mongoose.connect(process.env.MONGO_URI, {     
     useNewUrlParser: true,
-    useCreateIndex: true
-    // useUnifiedTopology: true
+    useCreateIndex: true,
+    useUnifiedTopology: true
 }).then(() => {
     console.log('Connected to MongoDB Atlas!');
 }).catch(err => {
@@ -49,14 +52,24 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// app.use(function(err, req, res, next) {
+//   // set locals, only providing error in development
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+//   // render the error page
+//   res.status(err.status || 500);
+//   res.render('error');
+// });
 
+if (app.get('env') === 'development') {
+    app.use(function(err, req, res, next) {
+      res.status(err.status || 500);
+      console.error(err.stack);
+      res.json({
+        message : err.message,
+        error   : err
+      });
+    });
+  }
 module.exports = app;

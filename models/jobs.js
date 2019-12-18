@@ -4,13 +4,13 @@ const Schema = mongoose.Schema;
 const JobSchema = new Schema({
     jobTitle: String,
     location: String,
-    // author: [
-    //     { 
-    //         type: Schema.Types.ObjectId, 
-    //         ref: 'Users' 
-    //     }
-    // ],
-    author: String,
+    author: [
+        { 
+            type: Schema.Types.ObjectId, 
+            ref: 'User' 
+        }
+    ],
+    // author: String,
     createdAt: Date,
     description: String,
     preferredSkills: String,
