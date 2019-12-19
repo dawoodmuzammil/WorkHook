@@ -1,11 +1,12 @@
 const jobs = require("../models/jobs");
+var moment = require("moment");
 
 module.exports = {
     async getJobs( req, res, next) {
         // 1) get all the jobs            
-        let jobsList = await jobs.find({}).populate('author', 'name'); 
-        console.log( jobsList);
-        res.send(jobsList);
+        let jobsList = await jobs.find({}).populate('author', 'name').sort({'_id': -1});
+        
+        res.render("mainfeed", {jobs: jobsList, moment: moment});
     },
 
     async getPostJob( req, res, next) {

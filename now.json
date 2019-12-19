@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "env": { "MONGO_URI" : "@workhook_mongo_uri" },
+    "builds": 
+    [
+        { 
+            "src": "app.js", 
+            "use": "@now/node" 
+        }
+    ],
+    "routes":
+    [
+        {
+            "src": "/(.*)",
+            "dest": "app.js"
+        },
+      
+        {
+            "src": "/jobs",
+            "methods": ["GET"],
+            "status" : 404
+        }
+    ]
+
+}
