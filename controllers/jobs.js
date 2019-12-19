@@ -8,13 +8,18 @@ module.exports = {
         res.send(jobsList);
     },
 
+    async getPostJob( req, res, next) {
+        // res.send("GET /jobs/new")
+        res.render("postJob");
+    },
+
     async postJob( req, res, next) {
         // 1) get the new job from user form        
         var newJob = {
             jobTitle: req.body.jobTitle,
             description: req.body.description,
             createdAt: new Date(),
-            author: req.body.author,
+            author: "5df94c2872c7bd295cec111a",
             location: req.body.location,
             preferredSkills: req.body.preferredSkills,
             deadline: req.body.deadline

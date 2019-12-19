@@ -1,0 +1,12 @@
+input, textarea  {	
+	font-size: 18px; 
+	padding-bottom: 10px; 
+	letter-spacing: 1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-control {
+    border-radius: 0.8rem;
+    border: 1.5px solid;
+	border-color: rgb(114, 112, 112);
+}

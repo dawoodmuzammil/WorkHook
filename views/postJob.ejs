@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="../public/stylesheets/common.css">
-    <link rel="stylesheet" type="text/css" href="../public/stylesheets/header.css">
-    <link rel="stylesheet" href="../public/stylesheets/post_job.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/post_job.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
 
 				<!--LOGO-->
 				<div class="col-sm-2 float-left ">
-					<a class="navbar-brand" href="/"><img src="logo_w.png" class="logo ml-auto"></a>
+					<a class="navbar-brand" href="/"><img src="/images/logo_w.png" class="logo ml-auto"></a>
 				</div>
 
 				<!--HOME BUTTON-->
@@ -58,7 +58,7 @@
 				<!-- PROFILE PICTURE -->
 				<div class="text-center col-sm-2">
 					<div class=" float-right">
-						<a href="#"><img src="bandi.jpg" class="profile_picture"></a>
+						<a href="#"><img src="/images/bandi.jpg" class="profile_picture"></a>
 						<label class="name d-block">
                             <strong>
 								<div class="dropdown show">
@@ -102,7 +102,7 @@
                         
                         <div class="row py-3 d-flex justify-content-start align-items-center">
                             <div class="col-sm-3">
-                                <a href=""><img src="../public/images/gates.jpg" alt="" class="chat-pic"></a>
+                                <a href=""><img src="/images/gates.jpg" alt="" class="chat-pic"></a>
                             </div>
                             <div class="col-sm-7">
                                 <a href=""><h5 class="friend-name tbp mb-0">Bill Gates</h5></a>
@@ -114,7 +114,7 @@
 
                         <div class="row py-3 d-flex justify-content-start align-items-center">
                             <div class="col-sm-3">
-                                <a href=""><img src="../public/images/elon.jpg" alt="" class="chat-pic"></a>
+                                <a href=""><img src="/images/elon.jpg" alt="" class="chat-pic"></a>
                             </div>
                             <div class="col-sm-7">
                                 <a href=""><h5 class="friend-name tbp mb-0">Elon Musk</h5></a>
@@ -126,7 +126,7 @@
 
                         <div class="row py-3 d-flex justify-content-start align-items-center">
                             <div class="col-sm-3">
-                                <a href=""><img src="../public/images/mark.jpg" alt="" class="chat-pic"></a>
+                                <a href=""><img src="/images/mark.jpg" alt="" class="chat-pic"></a>
                             </div>
                             <div class="col-sm-7">
                                 <a href=""><h5 class="friend-name tbp mb-0">Mark Zuckerberg</h5></a>
@@ -138,7 +138,7 @@
 
                         <div class="row py-3 d-flex justify-content-start align-items-center">
                             <div class="col-sm-3">
-                                <a href=""><img src="../public/images/haluk.jpg" alt="" class="chat-pic"></a>
+                                <a href=""><img src="/images/haluk.jpg" alt="" class="chat-pic"></a>
                             </div>
                             <div class="col-sm-7">
                                 <a href=""><h5 class="friend-name tbp mb-0">Haluk Altunel</h5></a>
@@ -270,20 +270,20 @@
         <hr class="end-of-post-hr mb-5">
 
         <div class="container col-sm-12">
-            <form action="">
+            <form action="/jobs/new" method="POST">
                 <!-- job title, experience required, descriptions, preferred skills, field of work -->
                 <div class="row">
                     <div class="col-sm-6 border-right">
                         
                         <!-- Job Title -->
 							<div class="col-sm-12 ">
-								<label for="job-title">
+								<label for="jobTitle">
 									<h6 class="tbg">Job Title:</h6>
 								</label>
 							</div>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" name="job-title"
-									id="job-title"
+								<input type="text" class="form-control" name="jobTitle"
+									id="jobTitle"
 									placeholder="Enter the job title . . ." required>
 							</div>
                         
@@ -305,7 +305,7 @@
                                     <h6 class="tbg">Preferred Skills:</h6>
                                 </label>
                                 <textarea required id="event-description" class="form-control col-sm-12 d-inline"
-                                    placeholder="Enter a comma separated list . . ." rows="3" required></textarea>
+                                    placeholder="Enter a comma separated list . . ." rows="3" name="preferredSkills" required></textarea>
                             </div>
                     </div>  <!-- column end -->
                     
@@ -318,25 +318,25 @@
                                 <h6 class="tbg">Description:</h6>
                             </label>
                             <textarea required id="event-description" class="form-control"
-                                placeholder="Please enter a description here . . ." rows="6" required></textarea>
+                                placeholder="Please enter a description here . . ." rows="6" name="description" required></textarea>
                         </div>
 
                         <!-- Application Deadline -->
                         <div class="col-sm-12 mt-4">
-                            <label for="location">
+                            <label for="deadline">
                                 <h6 class="tbg">Application Deadline:</h6>
                             </label>
                         </div>
                         <div class="col-sm-12">
-                            <input type="date" class="form-control" name="location"
-                                id="location"
-                                placeholder="Location . . ." required>
+                            <input type="date" class="form-control" name="deadline"
+                                id="deadline"
+                                placeholder="Deadline . . ." required>
                         </div>
                     </div> <!-- column end -->
 
                     <div class="row my-2 d-flex justify-content-around mx-auto mt-5">
                         <button type="submit" class="btn btn-outline-dark btn-lg my-btn mr-5">Post Job</button>
-                        <button type="submit" class="btn btn-outline-dark btn-lg my-btn ml-5">Cancel</button>
+                        <button type="" class="btn btn-outline-dark btn-lg my-btn ml-5">Cancel</button>
                     </div>
 
                 </div>
