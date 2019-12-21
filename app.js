@@ -19,7 +19,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // connect to the database
-mongoose.connect(process.env.MONGO_URI, {     
+// mongoose.connect(process.env.MONGO_URI, {     
+mongoose.connect(process.env.workhook_mongo_uri, {     
+
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
