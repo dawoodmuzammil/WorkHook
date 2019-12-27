@@ -1,0 +1,74 @@
+<% include ../partials/head %>
+
+        <title>Home | WorkHook</title>
+    </head>
+    <body>
+    <% include ../partials/header %>
+	
+    
+    <!-- *************** FEED *************** -->
+		<div class="container-fluid col-lg-8 d-inline-block feed ">
+			<div class="d-flex justify-content-between border-bottom align-items-center mt-4 mb-4 pb-4 ">
+				<h2 style="color: #4E4E4E; font-weight: 700;">Your Feed</h2>
+					<!-- <a href="/jobs/new">
+                        <button class="btn btn-lg btn-outline-dark d-flex float-right my-btn">Post a Job</button>
+                    </a> -->
+			</div>
+
+			<!-- ALL POSTS -->
+            <% jobs.forEach( function( job) { %>
+                
+                <div class="container-fluid d-flex align-items-start post mt-5 pl-3 pb-5 border-bottom ">
+                    <img src="/images/<%= job.author[0].name %>_logo.png" class="img-responsive d-inline-block mr-3 rounded " alt="Image" style="border: 2px solid rgb(223, 223, 223);">
+                    <div class="col-sm-9">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="/jobs/<%= job._id %>/interview"><p class="display-4 mb-1 ml-2 d-inline tbg"><%= job.jobTitle %></p></a>
+                            <form action="/jobs/<%= job._id %>/apply" method="POST">
+                                <% if ( applications.includes( job._id.toString())) { %>
+                                    <button type="submit" class="btn btn-md btn-outline-dark float-right py-2 my-btn " disabled>Already applied</button>
+                                <% } else { %>
+                                    <button type="submit" class="btn btn-md btn-outline-dark float-right py-2 my-btn">Apply to Job</button>
+                                <% } %>
+                            </form>
+                        </div>
+                        <p class="ml-2 pl-2 mb-2 "><strong class="tbg">Job posted by: </strong><a class="tbp" href="#"><%= job.author[0].name %></a></p>
+    
+                        <div class="row pl-2 mt-4">
+                            <div class="column col-lg-5 border-right ml-0 pl-4">
+                                <!-- <p class="mb-0"><strong class="tbg subheading">Details</strong></p> -->
+                                <div class="container pl-0">
+                                    <p><strong class="tbg">Location: </strong><span class="tbp"><%= job.location %></span></p>
+                                    <p class="mb-0"><strong class="tbg ">Application Deadline: </strong><span class="tbp"></span></p>
+                                    <p class="tbp "><em><%= moment(job.deadline).format('LL') %></em></p>
+                                    <!-- <p><strong class="tbg">Time: </strong><span class="tbp"></span></p> -->
+                                </div>
+                            </div>
+                            <div class="column col-sm-7">
+                                <div>
+                                    <p class="tbp"><%= job.description %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <% }) %>
+
+        </div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+	integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+	crossorigin="anonymous"></script>
+
+</html>
+
+
+	

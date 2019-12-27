@@ -2,14 +2,14 @@ var express = require('express');
 var router = express.Router();
 
 const { asyncErrorHandler } = require('../middleware/index');
-const { postRegister } = require('../controllers/index');
+const { getLogin, postLogin, postRegister } = require('../controllers/index');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-//   res.render("index");
-    res.send("Index")
-});
+router.get('/', asyncErrorHandler(getLogin));
+
+/* POST home page. */
+router.post('/login', asyncErrorHandler(postLogin));
 
 /* GET /register */
 router.get('/register', (req, res, next) => {

@@ -7,7 +7,7 @@ const JobSchema = new Schema({
     author: [
         { 
             type: Schema.Types.ObjectId, 
-            ref: 'User' 
+            ref: 'Company' 
         }
     ],
     // author: String,

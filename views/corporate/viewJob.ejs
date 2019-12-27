@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+        <title>Arcelik's Analytics | WorkHook</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/header.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/w3.css">
+	<nav class="navbar navbar-light d-flex sticky-top" style="background-color: #EF5B22">
+		<div class="container col-sm-12 d-flex justify-content-between">
+			<div class="row col-sm-12 align-items-center">
+
+				<!--LOGO-->
+				<div class="col-sm-2 float-left ">
+					<a class="navbar-brand" href="/"><img src="/images/logo_w.png" class="logo ml-auto"></a>
+				</div>
+
+				<!--HOME BUTTON-->
+				<div class="col-sm-1 ">
+					<a href="/"><i class="fa fa-home fa-2x fa-fw neeche_button my-auto float-left"></i></a>
+				</div>
+
+
+				<!-- SEARCH BAR -->
+				<div class="col">
+					<form action="/search/events" method="POST" class="form-inline">
+						<input type="text" name="searchBar" placeholder="Search Bar" class="col search_bar ml-auto">
+						<button type="submit" class="search_bar col-sm-1 d-inline" id="search_button">
+							<i class="fa fa-search "></i>
+						</button>
+					</form>
+				</div>
+
+
+				<!--NOTIFICATIONS BUTTON-->
+				<div class="col-sm-1">
+					<a href="# dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="far fa-bell fa-2x fa-fw neeche_button ml-auto float-right animate"></i>
+					</a>
+					<div class="dropdown-menu" id="pic-dropdown" aria-labelledby="dropdownMenuLink">
+						<a class="dropdown-item option pr-2" href="#">Friend Requests <span class="badge badge-pill badge-tag ml-2">2</span></a>
+						<a class="dropdown-item option pr-2" href="#">Chats<span class="badge badge-pill badge-tag ml-2 float-right">1</span></a>
+						<a class="dropdown-item option pr-2" href="#">Event Invites<span class="badge badge-pill badge-tag ml-2 float-right">7</span></a>
+						<a class="dropdown-item option pr-2" href="#">Group Invites<span class="badge badge-pill badge-tag ml-2 float-right">4</span></a>
+					</div>
+				</div>
+
+
+				<!-- PROFILE PICTURE -->
+				<div class="text-center col-sm-2">
+					<div class=" float-right">
+						<a href="#"><img src="/images/arcelik_logo.png" class="profile_picture"></a>
+						<label class="name d-block">
+                            <strong>
+								<div class="dropdown show">
+									<a class="name dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                        
+                                    </a>                                
+									<div class="dropdown-menu" id="pic-dropdown" aria-labelledby="dropdownMenuLink">
+										<a class="dropdown-item option" href="#">View Profile</a>
+										<a class="dropdown-item option" href="#">Settings</a>
+										<a class="dropdown-item option" href="#">Logout</a>
+									</div>
+								</div>
+                            </strong>
+                        </label>
+					</div>
+				</div>
+			</div>
+		</div>
+    </nav>
+    <!-- *************************************************** -->
+    <!-- ****************** Sidebar/menu ******************  -->
+    <!-- *************************************************** -->
+    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+        <div class="w3-container w3-row">
+            <!-- <div class="w3-col s4">
+                <img src="../public/images/arcelik.png" class="w3-circle w3-margin-right" style="width:46px">
+            </div> -->
+            <div class="w3-col s12 w3-bar">
+                <!-- <span class="d-flex justify-content-center font-weight-bold" style="letter-spacing: 3px;">Arçelik</span><br> -->
+                <div class="row col-sm-12 d-flex justify-content-center my-3">
+                    <img class="dash-logo" src="/images/arcelik.png" class="w3-circle w3-margin-right" style="width:46px">
+                </div>
+                <hr class="end-of-post-hr">
+                <div class="row d-flex justify-content-around">                    
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope" style="font-size: 22px;"></i></a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user" style="font-size: 22px;"></i></a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog" style="font-size: 22px;"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+        <div class="w3-container">
+            <h5 class="display-4">Dashboard</h5>
+        </div>
+        <div class="w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding w3-orange letter-spc"><i class="fa fa-users fa-fw"></i>  Overview</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding letter-spc"><i class="fa fa-eye fa-fw"></i>  Views</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding letter-spc"><i class="fa fa-users fa-fw"></i>  Traffic</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding letter-spc"><i class="fa fa-bullseye fa-fw"></i>  Geo</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding letter-spc"><i class="fa fa-user fa-fw"></i>  Applications</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding letter-spc"><i class="fa fa-bell fa-fw"></i>  News</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding letter-spc"><i class="fa fa-history fa-fw"></i>  General</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding letter-spc"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
+        </div>
+    </nav>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+
+    <div class="container-fluid d-flex align-items-start post mt-5 pl-3 pb-5 border-bottom col-sm-9 mr-5 float-right">
+        <img src="/images/Arcelik_logo.png" class="img-responsive d-inline-block mr-3 rounded " alt="Image" style="border: 2px solid rgb(223, 223, 223);">
+        <div class="col-sm-9">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href=""><p class="display-4 mb-1 ml-2 d-inline tbg"><%= job[0].jobTitle %></p></a>                
+            </div>
+            <p class="ml-2 pl-2 mb-2 "><strong class="tbg">Job posted by: </strong><a class="tbp" href="#"><%= job[0].author[0].name%></a></p>
+            
+            <div class="row pl-2 mt-4">
+                <div class="column col-lg-5 border-right ml-0 pl-4">
+                    <!-- <p class="mb-0"><strong class="tbg subheading">Details</strong></p> -->
+                    <div class="container pl-0">
+                        <p><strong class="tbg">Location: </strong><span class="tbp"><%= job[0].location %></span></p>
+                        <p class="mb-0"><strong class="tbg ">Application Deadline: </strong><span class="tbp"></span></p>
+                        <p class="tbp "><em><%= moment(job[0].deadline).format('LL') %></em></p>
+                        <!-- <p><strong class="tbg">Time: </strong><span class="tbp"></span></p> -->
+                    </div>
+                </div>
+                <div class="column col-sm-7">
+                    <div>
+                        <p class="tbp"><%= job[0].description %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <hr class="end-of-post-hr">
+
+    <div class="container-fluid d-flex align-items-start post mt-5 pl-3 pb-5 col-sm-9 mr-5 ">
+
+        <!-- TITLE -->
+        <div class="row col-sm-12 d-flex justify-content-center ">
+            <h4 class="display-4 font-weight-bold my-5 tbg" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing: 2px;;">Received Applications</h4>
+            
+            <!-- EACH JOB -->
+            <% applications.forEach( function( application) { %>
+                <div class="row d-flex justify-content-between col-sm-12 border-top border-bottom py-5">
+                    <div class="row col-sm-8">
+                        <h4 class="ml-2 pl-2 mb-2" >
+                            <strong class="tbg " style="font-size: 160%; letter-spacing: 1px;"><%= application.applicant.name %></strong>
+                        </h4>
+                    </div>
+                    <div class="row col-sm-3 d-flex justify-content-around align-items-center">
+                        <!-- <form action="/corporate/<%= application.job %>/accept?_method=PUT" method="POST">  -->
+                            <% if ( application.status === "Pending") { %>
+                                <a href="/corporate/<%= application.job %>/accept"><button class="btn btn-md btn-outline-dark float-right py-2 my-btn" type="submit">Accept</button></a>
+                            <% } else { %>
+                                <button class="btn btn-md btn-outline-dark float-right py-2 my-btn" type="submit" disabled>Accepted</button>
+                            <% } %>                           
+                        </form>
+                        <!-- <form action=""> -->
+                            <button class="btn btn-md btn-outline-dark float-right py-2 my-btn">Reject</button>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+    </div>
+	
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+	integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+	crossorigin="anonymous"></script>
+
+</html>
+
+
+	

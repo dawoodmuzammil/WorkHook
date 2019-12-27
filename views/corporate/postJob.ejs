@@ -1,0 +1,110 @@
+<% include ../partials/head %>
+
+    <title>Post a Job | WorkHook </title>
+    <link rel="stylesheet" href="/stylesheets/post_job.css">
+</head>
+
+<body>
+    <% include ../partials/header %>
+
+    <div id="main-view-pane"
+		class="container-fluid align-items-start col-sm-8 d-inline-block feed">
+		<div id="event-title" class="row mb-2">
+			<h4 style="color: #4E4E4E; font-weight: 400;"
+				class="mx-auto display-4">Post a job</h4>
+        </div>
+    
+        <hr class="end-of-post-hr mb-5">
+
+        <div class="container col-sm-12">
+            <form action="/jobs/new" method="POST">                
+                <div class="row">
+                    <div class="col-sm-6 border-right">
+                        
+                        <!-- Job Title -->
+							<div class="col-sm-12 ">
+								<label for="jobTitle">
+									<h6 class="tbg">Job Title:</h6>
+								</label>
+							</div>
+							<div class="col-sm-12">
+								<input type="text" class="form-control" name="jobTitle"
+									id="jobTitle"
+									placeholder="Enter the job title . . ." required>
+							</div>
+                        
+                        <!-- Location -->
+							<div class="col-sm-12 mt-4">
+								<label for="location">
+									<h6 class="tbg">Location:</h6>
+								</label>
+							</div>
+							<div class="col-sm-12">
+								<input type="text" class="form-control" name="location"
+									id="location"
+									placeholder="Location . . ." required>
+							</div>
+                        
+                        <!-- Preferred Skills -->
+							<div class="form-group col-sm-12 mt-4">
+                                <label for="event-description col-sm-3 float-left">
+                                    <h6 class="tbg">Preferred Skills:</h6>
+                                </label>
+                                <textarea required id="event-description" class="form-control col-sm-12 d-inline"
+                                    placeholder="Enter a comma separated list . . ." rows="3" name="preferredSkills" required></textarea>
+                            </div>
+                    </div>  <!-- column end -->
+                    
+                    <!-- RIGHT -->
+                    <div class="col-sm-6">
+
+                        <!-- Description -->
+                        <div class="col-sm-12">
+                            <label for="event-description">
+                                <h6 class="tbg">Description:</h6>
+                            </label>
+                            <textarea required id="event-description" class="form-control"
+                                placeholder="Please enter a description here . . ." rows="6" name="description" required></textarea>
+                        </div>
+
+                        <!-- Application Deadline -->
+                        <div class="col-sm-12 mt-4">
+                            <label for="deadline">
+                                <h6 class="tbg">Application Deadline:</h6>
+                            </label>
+                        </div>
+                        <div class="col-sm-12">
+                            <input type="date" class="form-control" name="deadline"
+                                id="deadline"
+                                placeholder="Deadline . . ." required>
+                        </div>
+                    </div> <!-- column end -->
+
+                    <div class="row my-2 d-flex justify-content-around mx-auto mt-5">
+                        <button type="submit" class="btn btn-outline-dark btn-lg my-btn mr-5">Post Job</button>
+                        <button type="" class="btn btn-outline-dark btn-lg my-btn ml-5">Cancel</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+	integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+	crossorigin="anonymous"></script>
+
+</html>
+
+
+	

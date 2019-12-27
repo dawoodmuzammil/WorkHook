@@ -1,79 +1,53 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html>
+<head>
+    <title>Welcome to WorkHook</title>
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+<body>
+    <div class="container login-box col-sm-4">
+        <div class="col-sm-12 d-flex justify-content-center mb-5">
+            <img src="/images/logo.png" alt="" class="logo">
+        </div>
 
-    <!-- <link rel="stylesheet" type="text/css" href="/public/stylesheets/"> -->
-    <link rel="stylesheet" type="text/css" href="/stylesheets/header.css">
-	<nav class="navbar navbar-light d-flex sticky-top" style="background-color: #EF5B22">
-		<div class="container col-sm-12 d-flex justify-content-between">
-			<div class="row col-sm-12 align-items-center">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex justify-content-center">
+                    <h2 class="mb-0">Sign In</h2>
+                </div>
+            </div>
+            <div class="card-body">
+                <form action="/login" method="POST">
 
-				<!--LOGO-->
-				<div class="col-sm-2 float-left ">
-					<a class="navbar-brand" href="/"><img src="logo_w.png" class="logo ml-auto"></a>
-				</div>
-
-				<!--HOME BUTTON-->
-				<div class="col-sm-1 ">
-					<a href="/"><i class="fa fa-home fa-2x fa-fw neeche_button my-auto float-left"></i></a>
-				</div>
-
-
-				<!-- SEARCH BAR -->
-				<div class="col">
-					<form action="/search/events" method="POST" class="form-inline">
-						<input type="text" name="searchBar" placeholder="Search Bar" class="col search_bar ml-auto">
-						<button type="submit" class="search_bar col-sm-1 d-inline" id="search_button">
-							<i class="fa fa-search "></i>
-						</button>
-					</form>
-				</div>
-
-
-				<!--NOTIFICATIONS BUTTON-->
-				<div class="col-sm-1">
-					<a href="# dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<i class="far fa-bell fa-2x fa-fw neeche_button ml-auto float-right animate"></i>
-					</a>
-					<div class="dropdown-menu" id="pic-dropdown" aria-labelledby="dropdownMenuLink">
-						<a class="dropdown-item option pr-2" href="#">Friend Requests <span class="badge badge-pill badge-tag ml-2">2</span></a>
-						<a class="dropdown-item option pr-2" href="#">Chats<span class="badge badge-pill badge-tag ml-2 float-right">1</span></a>
-						<a class="dropdown-item option pr-2" href="#">Event Invites<span class="badge badge-pill badge-tag ml-2 float-right">7</span></a>
-						<a class="dropdown-item option pr-2" href="#">Group Invites<span class="badge badge-pill badge-tag ml-2 float-right">4</span></a>
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="email" class="form-control" placeholder="email..." name="email" style="font-size: 1.2rem;">
+						
 					</div>
-				</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control border-none" placeholder="password..." name="password" style="font-size: 1.2rem;">
+                    </div>
+                    <div class="row d-flex justify-content-center mr-auto">
+                        <span>Don't have an account?<a href="#" class="forgot-pw float-right pl-1"><strong>Sign up.</strong></a></span>
+                    </div>
+                    <div class="row d-flex justify-content-center mt-3">
+                        <!-- <input type="submit" class="btn btn-md login-btn"> -->
+                        <button class="btn btn-md login-btn" type="submit">Login</button>
+                    </div>
 
-
-				<!-- PROFILE PICTURE -->
-				<div class="text-center col-sm-2">
-					<div class=" float-right">
-						<a href="#"><img src="bandi.jpg" class="profile_picture"></a>
-						<label class="name d-block">
-                            <strong>
-								<div class="dropdown show">
-									<a class="name dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                        
-                                    </a>                                
-									<div class="dropdown-menu" id="pic-dropdown" aria-labelledby="dropdownMenuLink">
-										<a class="dropdown-item option" href="/users/<%= curUser.username %>/profile">View Profile</a>
-										<a class="dropdown-item option" href="#">Settings</a>
-										<a class="dropdown-item option" href="/logout">Logout</a>
-									</div>
-								</div>
-                            </strong>
-                        </label>
-					</div>
-				</div>
-			</div>
-		</div>
-	</nav>
-
-
-	
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
